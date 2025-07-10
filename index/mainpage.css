@@ -1,0 +1,52 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: black;
+    color: white;
+}
+#main{
+    /* border:6px solid red; */
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+}
+
+.movie_cards{
+    /* border: 3px solid green; */
+    display: flex;
+    box-shadow: rgba(210, 191, 191, 0.35) 0px 5px 45px;
+}
+.img_box{
+    width: 200px;
+    
+}
+.img{
+    width: 100%;
+}
+.info{
+    /* border: 3px solid red; */
+    width: 500px;
+}
+.title{
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.plot{
+    padding: 15px;
+    font-weight: 640;
+    font-size: 15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cast{
+    /* border: 1px solid blue; */
+    padding: 0px 15px;
+    height: 70px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* overflow: scroll; */
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
