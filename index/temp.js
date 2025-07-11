@@ -1,25 +1,10 @@
-let api = "https://www.omdbapi.com/";
-let api_key = "2c9ca836";
-let search_box = document.getElementById("search_box");
-let main = document.getElementById("main");
-let search_result;
-const getsearchresult = async () => {
-	main.innerHTML = "";
-	res = await fetch(`${api}?s=${search_box.value}&apikey=${api_key}`);
-	let data = await res.json();
-	search_result = data.Search;
-	// console.log(search_result);
-	getdata();
-};
-
 const getdata = async () => {
-	for (let i = 0; i < search_result.length; i++) {
-		res = await fetch(`${api}?t=${search_result[i].Title}&apikey=${api_key}`);
-		let data = await res.json();
-		createit(data);
-	}
-};
+	let res = await fetch(`${api}?t=${search_box.value}&apikey=${api_key}`);
+	let data = await res.json();
+	console.log(data);
 
+	createit(data);
+};
 const createit = ({
 	Title,
 	Actors,
@@ -32,6 +17,7 @@ const createit = ({
 	Plot,
 	Genre,
 }) => {
+	main.innerHTML = "";
 	let card = document.createElement("div");
 	let info = document.createElement("div");
 	// Movie title
@@ -78,8 +64,4 @@ const createit = ({
 	img.src = Poster;
 	card.append(img_box, info);
 	main.append(card);
-};
-
-const delay = () => {
-	setTimeout(getsearchresult, 2000);
 };
